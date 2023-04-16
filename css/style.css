@@ -1,0 +1,119 @@
+:root {
+    --my-padding: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    color: white;
+    display: grid;
+    gap: 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 4fr 1.5fr 1.5fr 1fr 1fr ;
+    grid-template-areas: 
+    "header menu menu menu"
+    "hero hero hero hero"
+    "main main image image"
+    "main main extra extra"
+    "banner banner banner banner"
+    ;
+
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.header {
+    display: grid;
+    align-items: center;
+    background-color: black;
+    grid-area: header;
+    padding: var(--my-padding);
+}
+
+.menu {
+    display: grid;
+    align-items: center;
+    background-color: red;
+    grid-area: menu;
+    padding: var(--my-padding);
+}
+
+.hero {
+    display: grid;
+    align-items: center;
+    background-color: rgb(103, 134, 167);
+    grid-area: hero;
+    padding: var(--my-padding);
+}
+
+.main {
+    display: grid;
+    align-items: center;
+    background-color: rgb(128, 18, 18);
+    grid-area: main;
+    padding: var(--my-padding);
+}
+
+.image {
+    display: grid;
+    align-items: center;
+    background-color: rgb(192, 192, 228);
+    grid-area: image;
+    padding: var(--my-padding);
+}
+
+.extra {
+    display: grid;
+    align-items: center;
+    background-color: rgb(68, 143, 68);
+    grid-area: extra;
+    padding: var(--my-padding);
+}
+
+.banner {
+    display: grid;
+    align-items: center;
+    background-color: rgb(239, 122, 38);
+    grid-area: banner;
+    padding: var(--my-padding);
+}
+
+@media (max-width: 1024px) {
+    .container{
+        gap: 0;
+        grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr;
+        grid-template-rows: 0.5fr 4fr 6fr 2fr 2fr;
+        grid-template-areas: 
+        "header header header header"
+        "hero hero hero hero"
+        "menu main main main"
+        "menu banner banner banner"
+        "menu extra extra image"
+    ;
+    }
+}
+
+@media (max-width: 480px) {
+    .container{
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr 1.5fr 5fr 7fr 2.5fr 3fr 3fr;
+        grid-template-areas: 
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image"
+    ;
+    }
+}
+
+
